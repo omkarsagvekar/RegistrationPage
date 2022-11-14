@@ -76,7 +76,7 @@
             android:background="@drawable/shape_for_month_edittext"/>
 
         <EditText
-            android:id="@+id/tv_day"
+            android:id="@+id/et_day"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -90,11 +90,12 @@
             android:background="@drawable/shape_for_day_edittext"/>
 
         <EditText
-            android:id="@+id/tv_year"
+            android:id="@+id/et_year"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:hint="Year"
+            android:inputType="number"
             android:textAlignment="center"
             android:fontFamily="@font/convergence"
             android:textSize="18sp"

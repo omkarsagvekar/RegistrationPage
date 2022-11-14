@@ -7,6 +7,6 @@ public class Params {
 
     public static final String ID = "id";
     public static final String NAME = "name";
-    public static final String DOB = "Date_of_birth";
+    public static final String DOB = "birthdate";
     public static final String EMAIL = "email";
 }

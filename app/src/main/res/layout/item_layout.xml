@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1,2,3">
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="80dp"
+            android:layout_column="1"
+            android:background="@drawable/shape_for_day_edittext"
+            android:ellipsize="end"
+            android:fontFamily="@font/convergence"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Name"
+            android:singleLine="true"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_dob"
+            android:layout_width="100dp"
+            android:text="Date of birth"
+            android:textSize="16sp"
+            android:fontFamily="@font/convergence"
+            android:background="@drawable/shape_for_day_edittext"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_column="1"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/tv_emailId"
+            android:layout_width="80dp"
+            android:text="email"
+            android:textSize="16sp"
+            android:fontFamily="@font/convergence"
+            android:background="@drawable/shape_for_day_edittext"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:gravity="center"
+            android:layout_column="1"
+            android:textColor="@color/black"
+            android:ellipsize="end"/>
+    </TableRow>
+</TableLayout>
