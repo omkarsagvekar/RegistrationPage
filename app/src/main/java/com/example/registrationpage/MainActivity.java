@@ -102,9 +102,17 @@ public class MainActivity extends AppCompatActivity {
                 int day = parseInt(etDay.getText().toString().trim());
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    if (YearMonth.of(year, month).isValidDay(day)){
+                    int currentYear = 0;
+
+                    currentYear = Integer.parseInt(String.valueOf(Year.now()));
+                    if (Integer.parseInt(etYear.getText().toString()) > currentYear) {
+                        etYear.setError("Enter valid year");
+                        return;
+                    }
+
+                    if (YearMonth.of(year, month).isValidDay(day)) {
                         postDataToSqlite();
-                    }else{
+                    } else {
                         etDay.setError("Invalid day");
                     }
                 }
@@ -167,14 +175,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validYear() {
-        int currentYear = 0;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            currentYear = Integer.parseInt(String.valueOf(Year.now()));
-            if (Integer.parseInt(etYear.getText().toString()) > currentYear) {
-                etYear.setError("Enter valid year");
-                return false;
-            }
-        } else if (etYear.getText().toString().equals("")) {
+        if (etYear.getText().toString().equals("")) {
             etYear.setError("Year should not be empty");
             return false;
         }

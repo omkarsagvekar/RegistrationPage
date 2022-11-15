@@ -8,11 +8,13 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 
 import com.example.registrationpage.db.MyDbHandler;
 import com.example.registrationpage.model.User;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class UserListTable extends AppCompatActivity {
 
@@ -31,9 +33,18 @@ public class UserListTable extends AppCompatActivity {
 
     private void initObj() {
         arrayList = new ArrayList<>();
+
+        Collections.reverse(arrayList);
+
         userAdapter = new UserAdapter(UserListTable.this, arrayList);
         RecyclerView recyclerView = findViewById(R.id.recyclerView_user);
-        recyclerView.setLayoutManager(new LinearLayoutManager(UserListTable.this));
+
+        //For reverse the list(new or fresh data row comes at top in recycleView).
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(UserListTable.this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(userAdapter);
         myDbHandler = new MyDbHandler(UserListTable.this);
         arrayList.addAll(myDbHandler.getAllUsers());
