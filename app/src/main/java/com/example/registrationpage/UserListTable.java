@@ -45,6 +45,7 @@ public class UserListTable extends AppCompatActivity {
         linearLayoutManager.setStackFromEnd(true);
 
         recyclerView.setLayoutManager(linearLayoutManager);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(UserListTable.this));
         recyclerView.setAdapter(userAdapter);
         myDbHandler = new MyDbHandler(UserListTable.this);
         arrayList.addAll(myDbHandler.getAllUsers());
